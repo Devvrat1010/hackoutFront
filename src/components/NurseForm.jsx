@@ -11,7 +11,7 @@ export default function NurseForm(){
     const navigate = useNavigate();
     
     const getPatientdata =async () => {
-        await fetch("http://localhost:3000/nursesData")
+        await fetch("https://backend-v8da.onrender.com/nursesData")
        .then((response) => response.json())
        .then((data) => console.log(data));
    }    
@@ -80,7 +80,7 @@ export default function NurseForm(){
         // let nurseData=formValues
         // setAbhaNumber(Number(abhaNumber))
         axios
-        .post(`http://localhost:3000/nurseData`, {
+        .post(`https://backend-v8da.onrender.com/nurseData`, {
             query:formValues
         })
         .then(function (res) {
@@ -99,7 +99,7 @@ export default function NurseForm(){
     const queueString = JSON.stringify(patientQueue);
 
     const getCurrPatientdata = async () => {
-        await fetch(`http://localhost:3000/patients/selected/?queue=${queueString}`)
+        await fetch(`https://backend-v8da.onrender.com/patients/selected/?queue=${queueString}`)
             .then((response) => response.json())
             .then((data) => 
                 setCurrPatientData(data))

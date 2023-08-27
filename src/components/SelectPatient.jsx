@@ -8,7 +8,7 @@ export default function SelectPatient() {
     const queueString = JSON.stringify(patientQueue);
 
     const getCurrPatientdata = async () => {
-        await fetch(`http://localhost:3000/patients/selected/?queue=${queueString}`)
+        await fetch(`https://backend-v8da.onrender.com/patients/selected/?queue=${queueString}`)
             .then((response) => response.json())
             .then((data) => 
                 setCurrPatientData(data))

@@ -8,7 +8,7 @@ export default function DoctorDetails(){
     const [temp,setTemp]=useState([])
     const getData=async ()=>{
         console.log("working")
-            await fetch("http://localhost:3000/doctors")
+            await fetch("https://backend-v8da.onrender.com/doctors")
             .then((response) => response.json())
             .then(data => setTemp(data) )
         }

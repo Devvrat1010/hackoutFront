@@ -59,7 +59,7 @@ export default function FormReception(){
         console.log("working")
         setAbhaNumber(Number(abhaNumber))
         axios
-        .post(`http://localhost:3000/reception/uploadAbha`, {
+        .post(`https://backend-v8da.onrender.com/reception/uploadAbha`, {
             abhaNumber:abhaNumber
         })
         .then(function (res) {
