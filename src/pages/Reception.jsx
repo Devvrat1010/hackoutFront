@@ -15,7 +15,7 @@ export default function Reception() {
     const typewriterInstance = new TypeWriter(typewriter.current, {
       delay: 70,
       loop: true,
-      deleteSpeed: 10,
+      deleteSpeed: 20,
     });
     typewriterInstance
       .pause(500)

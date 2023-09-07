@@ -19,23 +19,23 @@ export default function Login_Navbar() {
           className="group text-white opacity-95 tracking-tight transition-all duration-300 ease-in-out"
           onClick={()=>{navigate("/registration")}}
           >
-          <span className="bg-left-bottom bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+          <span className="bg-left-bottom bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out text-[25px]">
             <Link to="/registration">Reception</Link>
           </span>
         </button>
         <button
-          className="group text-white opacity-95 tracking-tight transition-all duration-300 ease-in-out"
+          className="group text-white opacity-95 tracking-tight transition-all duration-300 ease-in-out "
           onClick={()=>{navigate("/nurse")}}
           >
-          <span className="bg-left-bottom bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+          <span className="bg-left-bottom bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out text-[25px]">
           <Link to="/nurse">Nurse</Link>
           </span>
         </button>
         <button
-          className="group text-white opacity-95 tracking-tight transition-all duration-300 ease-in-out"
+          className="group text-white opacity-95 tracking-tight transition-all duration-300 ease-in-out text-[25px]"
           onClick={()=>{navigate("/doctor")}}
         >
-          <span className="bg-left-bottom bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+          <span className="bg-left-bottom bg-gradient-to-r from-white to-white bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out text-[25px]">
           <Link to="/doctors">Doctors</Link>
           </span>
         </button>
