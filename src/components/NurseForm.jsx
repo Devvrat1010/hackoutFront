@@ -1,10 +1,12 @@
 import React,{useEffect, useState} from "react";
 import Card from "../components/Card";
-import {Box,Button,FormControlLabel,FormGroup,TextField  } from "@mui/material"
+import {Box,Button,FormControlLabel,FormGroup,TextField,IconButton } from "@mui/material"
 import {NavLink} from "react-router-dom"
 import axios from "axios";
 import { DataGrid } from "@mui/x-data-grid";
 import { useNavigate } from "react-router-dom";
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 
 export default function NurseForm(){
@@ -144,47 +146,41 @@ export default function NurseForm(){
 
     return(
         
-        <div style={{margin:"" }} className="relative h-full max-h-screen rounded-xl transition-all duration-200 bg-white" id="panel">
-        {/* ... (existing code) */}
-        <div className="w-full px-10 py-6 mx-auto" style={{ minHeight: '78vh' }}>
-          <div className="flex gap-10">
-            <Box>
+        <div style={{margin:"" }} className="relative h-full m-auto max-h-screen rounded-xl transition-all duration-200 bg-white font-poppins   " id="panel">
+            <div className="w-full px-10 py-6 " style={{ minHeight: '78vh' }}>
+                <div className="flex gap-10 ">
+                    <Box>
 
-                <h3 className="text-2xl font-semibold mb-4">Patient Details</h3>
-                <FormGroup style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}> 
-                    <TextField variant="outlined" label="" name="abhaNumber" value={clickedPatient} placeholder="Enter ABHA Number" onChange={abhaChange} style={{ width: '100%' }} />
-                    <TextField variant="outlined" label="Symptoms" name="symptoms" defaultValue="" placeholder="Enter Symptoms" onChange={symptomsChange} style={{ width: '100%' }} />
-                    <TextField variant="outlined" label="Vitals" name="vitals" defaultValue="" placeholder="Enter Vitals" onChange={vitalsChange} style={{ width: '100%' }} />
-                    <TextField variant="outlined" label="Age" name="age" defaultValue="" placeholder="Enter Age" onChange={ageChange} style={{ width: '100%' }} />
-                    <TextField variant="outlined" label="Blood Pressure" name="blood_pressure" defaultValue="" placeholder="Enter Blood Pressure" onChange={bloodPressureChange} style={{ width: '100%' }} />
-                    <TextField variant="outlined" label="Height" name="height" defaultValue="" placeholder="Enter Height" onChange={heightChange} style={{ width: '100%' }} />
-                    <TextField variant="outlined" label="Weight" name="weight" defaultValue="" placeholder="Enter Weight" onChange={weightChange} style={{ width: '100%' }} />
-                    <Button variant="contained" onClick={handleSubmit} sx={{width:"fit-content",fontSize:"20px",height:"fit-content"}}>
-                        Save
-                    </Button>
-                </FormGroup>
-            </Box>
-            <Box>
-                <DataGrid
-                    columns={columns}
-                    rows={rows}
-                    getRowHeight={() => '20px'}
-                    onRowClick={(e)=>{
-                        rowClicked(e)
-                    }}/>
-            </Box>
-        </div>
-                {/* <Button variant="contained" onClick={getPatientdata}>
-                    <Card />
-                </Button> */}
+                        <h3 className="text-2xl font-semibold mb-4 ">Patient Details</h3>
+                        <FormGroup style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem' }}> 
+                            <TextField variant="outlined" label="" name="abhaNumber" value={clickedPatient} placeholder="Enter ABHA Number" onChange={abhaChange} style={{ width: '100%'}} />
+                            <TextField variant="outlined" label="Symptoms" name="symptoms" defaultValue="" placeholder="Enter Symptoms" onChange={symptomsChange} style={{ width: '100%' }} />
+                            <TextField variant="outlined" label="Vitals" name="vitals" defaultValue="" placeholder="Enter Vitals" onChange={vitalsChange} style={{ width: '100%' }} />
+                            <TextField variant="outlined" label="Age" name="age" defaultValue="" placeholder="Enter Age" onChange={ageChange} style={{ width: '100%' }} />
+                            <TextField variant="outlined" label="Blood Pressure" name="blood_pressure" defaultValue="" placeholder="Enter Blood Pressure" onChange={bloodPressureChange} style={{ width: '100%' }} />
+                            <TextField variant="outlined" label="Height" name="height" defaultValue="" placeholder="Enter Height" onChange={heightChange} style={{ width: '100%' }} />
+                            <TextField variant="outlined" label="Weight" name="weight" defaultValue="" placeholder="Enter Weight" onChange={weightChange} style={{ width: '100%' }} />
+                            <Button variant="contained" onClick={handleSubmit} sx={{fontSize:"20px",fontFamily:""}}>
+                                Save
+                            </Button>
+                            <IconButton aria-label="delete">
+                                <DeleteIcon />
+                            </IconButton>
+                        </FormGroup>
+                    </Box>
+                    <Box>
+                        <DataGrid
+                            sx={{fontFamily:"poppins"}}
+                            columns={columns}
+                            rows={rows}
+                            getRowHeight={() => '20px'}
+                            onRowClick={(e)=>{
+                                rowClicked(e)
+                            }}/>
+                    </Box>
+                </div>
 
-            {/* <DataGrid
-                columns={columns}
-                rows={rows}
-                getRowHeight={() => 'auto'}
-            /> */}
-
-        </div>
+            </div>
         </div>
     )
 }

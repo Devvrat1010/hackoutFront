@@ -6,31 +6,32 @@ import { ThemeProvider, createTheme } from "@mui/material";
 import { ClerkProvider } from '@clerk/clerk-react';
 import { BrowserRouter as Router } from "react-router-dom";
 
-// import {} from '@mui/x-data-grid/themeAugmentation';
-// const theme = createTheme({
-//     components: {
-//         MuiDataGrid: {
-//           styleOverrides: {
-//             root: {
-//               backgroundColor: 'red',
-//             },
-//           },
-//         },
-//       },
-//     typography: {
-//         fontFamily: [
-//             'Bebas Neue',
-//             'Poppins',
-//             'sans-serif',
-//         ].join(',')},
-//     });
+import {} from '@mui/x-data-grid/themeAugmentation';
+const theme = createTheme({
+    components: {
+        MuiDataGrid: {
+          styleOverrides: {
+            root: {
+              backgroundColor: 'white',
+            },
+          },
+        },
+      },
+    typography: {
+        fontFamily: [
+            'Poppins',
+            'Bebas Neue',
+            'sans-serif',
+        ].join(',')},
+    });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-<Router>
-     <ClerkProvider publishableKey={import.meta.env.VITE_REACT_APP_CLERK_KEY}>
-        <App/>
-      </ClerkProvider> 
-</Router>
- 
+<ThemeProvider theme={theme}>
+    <Router>
+        <ClerkProvider publishableKey={import.meta.env.VITE_REACT_APP_CLERK_KEY}>
+            <App/>
+        </ClerkProvider> 
+    </Router>
+</ThemeProvider>
   
 );
